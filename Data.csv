@@ -1,0 +1,47 @@
+marca,modelo,anio,cobertura,precio
+Dodge,Charger,2019,Terceros,$5000
+Dodge,Charger,2019,Amplio,$9000
+Dodge,Charger,2019,Todo Riesgo,$13000
+Nissan,Sentra,2017,Todo Riesgo,$8000
+Nissan,Sentra,2017,Amplio,$11000
+Nissan,Sentra,2017,Terceros,$5000
+Ford,Mustang,2020,Todo Riesgo Amplio,$12000
+Ford,Mustang,2020,Todo Riesgo,$10000
+Ford,Mustang,2020,Amplio,$9000
+Ford,Mustang,2020,Terceros,$4500
+Mercedez,CLA,2018,Terceros Amplio,$10000
+Mercedez,CLA,2018,Amplio,$12000
+Mercedez,CLA,2018,Todo Riesgo,$14000
+BMW,Serie 3,2016,Todo Riesgo,$9000
+BMW,Serie 3,2016,Amplio,$8000
+BMW,Serie 3,2016,Terceros,$4000
+Toyota,Corolla,2022,Todo Riesgo Amplio,$11000
+Toyota,Corolla,2022,Todo Riesgo,$9000
+Toyota,Corolla,2022,Amplio,$7000
+Toyota,Corolla,2022,Terceros,$3500
+Ford,Fiesta,2019,Todo Riesgo,$7500
+Ford,Fiesta,2019,Amplio,$6500
+Ford,Fiesta,2019,Terceros,$3000
+Toyota,Camry,2015,Terceros,$4000
+Toyota,Camry,2015,Amplio,$7000
+Toyota,Camry,2015,Todo Riesgo,$10000
+Nissan,Altima,2020,Todo Riesgo Amplio,$13000
+Nissan,Altima,2020,Todo Riesgo,$11000
+Nissan,Altima,2020,Amplio,$9000
+Nissan,Altima,2020,Terceros,$5000
+Mercedez,GLC,2017,Terceros Amplio,$8500
+Mercedez,GLC,2017,Amplio,$10000
+Mercedez,GLC,2017,Todo Riesgo,$12000
+BMW,Serie 5,2018,Todo Riesgo Amplio,$11000
+BMW,Serie 5,2018,Todo Riesgo,$9000
+BMW,Serie 5,2018,Amplio,$7000
+BMW,Serie 5,2018,Terceros,$3500
+Dodge,Durango,2021,Terceros Amplio,$9500
+Dodge,Durango,2021,Amplio,$11000
+Dodge,Durango,2021,Todo Riesgo,$13000
+Toyota,Yaris,2016,Terceros Amplio,$5500
+Toyota,Yaris,2016,Amplio,$6500
+Toyota,Yaris,2016,Todo Riesgo,$8500
+Ford,Ranger,2017,Todo Riesgo,$10000
+Ford,Ranger,2017,Amplio,$8000
+Ford,Ranger,2017,Terceros,$4000
