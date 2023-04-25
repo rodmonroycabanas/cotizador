@@ -41,26 +41,45 @@ function cargarMarcas() {
           option.textContent = anio;
           anioSelect.appendChild(option);
         });
-      });
+        });
 
+        const submitBtn = document.getElementById("cotiza");
+        submitBtn.addEventListener("click", function(event) {
+        // código que se ejecuta al hacer click en el botón
+        event.preventDefault();
+        reportPrices(data);
+        });
     })
 }
 
-document.getElementById("cotiza").addEventListener("click", function() {
-    // Lee los valores seleccionados de los select de marca, modelo y año
-    const marca = document.getElementById("marca").value;
-    const modelo = document.getElementById("modelo").value;
-    const anio = document.getElementById("anio").value;
-  
-    // Busca la información correspondiente en el objeto "data"
-    const info = data[marca + modelo + anio];
-    fetch("./data.csv")
-    .then(response => response.text()) 
-    .then(text => {
-        const data = text.trim().split("\n").slice(1).map(line => line.split(",")); 
-        
-        console.log(data);
-    })
-  
-  });
 
+
+function reportPrices(data) {
+    const marcaSelect = document.getElementById("marca");
+    const modeloSelect = document.getElementById("modelo");
+    const anioSelect = document.getElementById("anio");
+    
+    
+    const marcaValue = marcaSelect.value.trim();
+    const modeloValue = modeloSelect.value.trim();
+    const anioValue = anioSelect.value.trim();
+
+    if (marcaValue === "" || marcaValue === "-- Seleccione una marca --") {
+    // Si el valor es vacío o "default", se ejecuta este bloque de código
+    console.log("Por favor seleccione una marca");
+    } else {
+    // Si el valor no es vacío ni "default", se ejecuta este bloque de código
+    console.log(`La marca seleccionada es ${marcaValue}`);
+    }
+
+    imprimirData(data);
+
+    document.getElementById("marca").value = marcaValue ;
+    document.getElementById("modelo").value = modeloValue ;
+    document.getElementById("anio").value = anioValue ;
+
+}
+
+function imprimirData(data) {
+    console.log(data);
+  }
