@@ -9,9 +9,7 @@
     <!-- my styles -->
      <link rel="stylesheet" type="text/css" href="../css/styles.css" />  
      <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-     <!-- javascript -->
-     <script src="../js/javascript.js" type="module" ></script>
-      <!--<script src="../js/precio.js" type="module"></script> -->
+     
     <title>Cotizador de Seguros</title>
 </head>
 <body >
@@ -28,7 +26,7 @@
             </nav>
             </div>
         </header>
-       <form class="needs-validation col-md-12 order-md-1" novalidate>
+       <form class="needs-validation col-md-12 order-md-1" id="formulario" novalidate>
             <div class="row mb-5">
                 <div class="col-12 col-sm-12 col-md-6   mb-2">
                     <label for="marca">Marca</label>
@@ -52,6 +50,15 @@
                     <label for="aseguradora">Aseguradora</label>
                     <select class="d-block w-100" id="aseguradora" required>
                     <option value="">-- Seleccione una aseguradora --</option>
+                    </select> 
+                </div>
+                <div class="col-12 col-sm-12 col-md-6  mb-2">
+                    <label for="cobertura">Cobertura</label>
+                    <select class="d-block w-100" id="cobertura" required>
+                    <option value="">-- Seleccione cobertura --</option>
+                    <option value="Amplia">Amplia</option>
+                    <option value="Limitada">Limitada</option>
+                    <option value="RC Terceros">RC Terceros</option>
                     </select> 
                 </div>
                 <div class="col-12 col-sm-12 col-md-6  mb-2">
@@ -165,7 +172,13 @@
                 
             </div>
             <button  id="btn-guardar-precio" class="btn btn-warning btn-lg btn-block" type="submit">Guardar en la lista de precios</button>
+            
         </form>
     </div>
+    <!-- javascript -->
+    <script src="../js/seguro.js" type="module"></script> 
+    <script src="../js/agregarSeguro.js" type="module" ></script>
+    <script src="../js/javascript.js" type="module" ></script>
+    
 </body>
 </html>

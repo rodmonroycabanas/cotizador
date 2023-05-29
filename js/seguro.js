@@ -1,4 +1,4 @@
-class Precio {
+class Seguro {
     constructor(marca, modelo, anio, aseguradora, cobertura, precio) {
       this.marca = marca;
       this.modelo = modelo;
@@ -13,5 +13,7 @@ class Precio {
     toCsv() {
         return `${this.marca},${this.modelo},${this.anio},"${this.aseguradora}","${this.cobertura}",${this.precio}`;
       }
+    
 }
+export default Seguro;
   

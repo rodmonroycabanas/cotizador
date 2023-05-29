@@ -1,12 +1,12 @@
 //import { Precio } from './precio.js';
 
+//LLenar drop box al cargar el DOM
 document.addEventListener("DOMContentLoaded", function() {
-  
   cargarMarcas();
-  document.getElementById("btn-guardar-precio").addEventListener("click", function(event) {
-    event.preventDefault();
-    guardarNuevoPrecio();
-  });
+  // document.getElementById("btn-guardar-precio").addEventListener("click", function(event) {
+  //   event.preventDefault();
+  //   guardarNuevoPrecio();
+  // });
   
 });
 
@@ -174,79 +174,4 @@ function mostrarCamposIncrementos() {
 
 
 
-function guardarNuevoPrecio(){
-  
-  // Obtener los valores del formulario
-  
-  const marca = document.getElementById('marca').value;
-  const modelo = document.getElementById('modelo').value;
-  const anio = document.getElementById('anio').value;
-  const aseguradora = document.getElementById('aseguradora').value;
-  const precio = document.getElementById('precio').value;
-  const autoPrecio = document.getElementById('auto-precio').value;
-  const anInicio = document.getElementById('anInicio');
-  const anFin = document.getElementById('anFin');
-  const anioDesde = document.getElementById('anioDesde').valueAsNumber;
-  const anioHasta = document.getElementById('anioHasta').valueAsNumber;
-  const xcent = document.getElementById('xcent').valueAsNumber;
-  
-  const nuevosPrecios=[];
 
-  // Crear objeto 
-//  const nuevoPrecio = new Precio(marca, modelo, anio, aseguradora, cobertura, precio);
-//  console.log(nuevoPrecio);
-
-  let contador = 1;
-  let periodo =1
-
-  if (autoPrecio === true){
-    periodo= anioHasta - anioDesde;
-
-    if (anFin.value==="on"){
-      contador = -1;
-      anio = anioHasta;
-    }
-    else{
-      anio = anioDesde;
-    }
-    
-  }
- 
-
-  for (let i = 1; i > periodo; i++) {
-    if(xcent != 0){
-      precio = precio + (precio * (xcent / 100));
-    }
-    const nuevoPrecio = new Precio(
-      marca,
-      modelo,
-      anio,
-      aseguradora,
-      "amplia",
-      precio
-    );
-  
-    nuevosPrecios.push(nuevoPrecio);
-  }
-  
-  console.log(nuevosPrecios);
-
-
-}
-
-class Precio {
-  constructor(marca, modelo, anio, aseguradora, cobertura, precio) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.anio = anio;
-    this.aseguradora = aseguradora;
-    this.cobertura = cobertura;
-    this.precio = precio;
-  }
-  toJson() {
-      return JSON.stringify(this);
-  }
-  toCsv() {
-      return `${this.marca},${this.modelo},${this.anio},"${this.aseguradora}","${this.cobertura}",${this.precio}`;
-    }
-}
