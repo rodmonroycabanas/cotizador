@@ -1,4 +1,24 @@
 //import { Precio } from './precio.js';
+const anioDesdeSelect = document.getElementById("anioDesde");
+const anioHastaSelect = document.getElementById("anioHasta");
+const modeloSelect = document.getElementById("modelo");
+const anioSelect = document.getElementById("anio");
+const autoPrecioCheck = document.getElementById("auto-precio");
+const marcaSelect = document.getElementById("marca");
+const aseguradoraSelect = document.getElementById("aseguradora");
+
+
+const hiddendiv1 = document.getElementById("hdiv1");
+const hiddendiv2 = document.getElementById("hdiv2");
+const hiddendiv3 = document.getElementById("hdiv3");
+const hiddendiv4 = document.getElementById("hdiv4");
+
+
+anioHastaSelect.addEventListener ("change",() =>{
+  if (parseInt(anioHastaSelect.value) < parseInt(anioDesdeSelect.value) ) {
+    alert("El año hasta no puede ser menor que el año desde");
+  }
+});
 
 //LLenar drop box al cargar el DOM
 document.addEventListener("DOMContentLoaded", function() {
@@ -16,7 +36,7 @@ function cargarMarcas() {
   }
   else if (nombrePagina.includes("agregar.html")){
     datafile = "../data.csv"
-    const autoPrecioCheck = document.getElementById("auto-precio");
+    
     autoPrecioCheck.addEventListener("change", function() {
     mostrarCamposIncrementos();
   });
@@ -31,7 +51,7 @@ function cargarMarcas() {
 }
 
 function cargarMarcasSelect(data) {
-  const marcaSelect = document.getElementById("marca");
+  
   const marcas = [...new Set(data.map(line => line[0]))];
   marcas.forEach(marca => {
     const option = document.createElement("option");
@@ -40,8 +60,6 @@ function cargarMarcasSelect(data) {
     marcaSelect.appendChild(option);
   });
   marcaSelect.addEventListener("change", () => {
-    const modeloSelect = document.getElementById("modelo");
-    const anioSelect = document.getElementById("anio");
     modeloSelect.innerHTML = "<option value=''>-- Seleccione un modelo --</option>"; // Limpiar select
     anioSelect.innerHTML = "<option value=''>-- Seleccione un año --</option>"; // Limpiar select
 
@@ -50,8 +68,6 @@ function cargarMarcasSelect(data) {
 }
 
 function cargarModelosSelect(data) {
-  const marcaSelect = document.getElementById("marca");
-  const modeloSelect = document.getElementById("modelo");
   
   const modelos = [...new Set(data.filter(line => line[0] === marcaSelect.value).map(line => line[1]))]; // Obtener modelos sin repetir
             modelos.forEach(modelo => {
@@ -61,7 +77,7 @@ function cargarModelosSelect(data) {
               modeloSelect.appendChild(option);
             });
   modeloSelect.addEventListener("change", () => {
-    const anioSelect = document.getElementById("anio");
+    
     anioSelect.innerHTML = "<option value=''>-- Seleccione un año --</option>"; // Limpiar select    
     cargarAniosSelect(data) 
   });
@@ -69,9 +85,6 @@ function cargarModelosSelect(data) {
 
 function cargarAniosSelect(data) {
   
-  const marcaSelect = document.getElementById("marca");
-  const modeloSelect = document.getElementById("modelo");
-  const anioSelect = document.getElementById("anio");
   var nombrePagina  = document.URL.split('/').pop();
 
   const anios = [...new Set(data.filter(line => line[0] === marcaSelect.value && line[1] === modeloSelect.value).map(line => line[2]))]; // Obtener años sin repetir
@@ -87,7 +100,6 @@ function cargarAniosSelect(data) {
   if (nombrePagina.includes("agregar.html")){
     //Si es para agregar nuevo
     anioSelect.addEventListener("change", () => {
-      const aseguradoraSelect = document.getElementById("aseguradora");
       aseguradoraSelect.innerHTML = "<option value=''>-- Seleccione una aseguradora --</option>"; // Limpiar select    
       cargarAseguradoraSelect(data) 
     });
@@ -96,10 +108,6 @@ function cargarAniosSelect(data) {
 
 function cargarAseguradoraSelect(data) {
   
-  const marcaSelect = document.getElementById("marca");
-  const modeloSelect = document.getElementById("modelo");
-  const anioSelect = document.getElementById("anio");
-  const aseguradoraSelect = document.getElementById("aseguradora");
 
   const aseguradoras = [...new Set(data.filter(line => line[0] === marcaSelect.value && line[1] === modeloSelect.value && line[2] === anioSelect.value).map(line => line[3]))];
   aseguradoras.forEach(aseguradora => {
@@ -112,11 +120,7 @@ function cargarAseguradoraSelect(data) {
 
 
 
-function reportPrices(data) {
-    const marcaSelect = document.getElementById("marca");
-    const modeloSelect = document.getElementById("modelo");
-    const anioSelect = document.getElementById("anio");
-    
+function reportPrices(data) {    
     
     const marcaValue = marcaSelect.value.trim();
     const modeloValue = modeloSelect.value.trim();
@@ -144,11 +148,7 @@ function imprimirData(data) {
 
 function mostrarCamposIncrementos() {
   //const hiddenGroup = document.getElementsByClassName("hidden-group");
-  const autoPrecioCheck = document.getElementById("auto-precio");
-  const hiddendiv1 = document.getElementById("hdiv1");
-  const hiddendiv2 = document.getElementById("hdiv2");
-  const hiddendiv3 = document.getElementById("hdiv3");
-  const hiddendiv4 = document.getElementById("hdiv4");
+
 
   if (autoPrecioCheck.checked) {
     hiddendiv1.classList.remove("hidden");
