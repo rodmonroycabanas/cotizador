@@ -38,6 +38,7 @@ function cargarSeguro(){
     nuevoSeguro.precio = precio.value;
     
     seguros.push(nuevoSeguro);
+    nuevoSeguro.sendToLocalStorage();
 };
 
 //polimorphysm for those auto calculated
@@ -51,6 +52,7 @@ function cargarSeguroConDatos(nuevoAnio, nuevoPrecio){
     nuevoSeguro.precio = nuevoPrecio;
     
     seguros.push(nuevoSeguro);
+    nuevoSeguro.sendToLocalStorage();
 };
 
 function cargarMultipleSeguro (){

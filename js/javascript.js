@@ -3,11 +3,6 @@
 //LLenar drop box al cargar el DOM
 document.addEventListener("DOMContentLoaded", function() {
   cargarMarcas();
-  // document.getElementById("btn-guardar-precio").addEventListener("click", function(event) {
-  //   event.preventDefault();
-  //   guardarNuevoPrecio();
-  // });
-  
 });
 
 
@@ -31,10 +26,7 @@ function cargarMarcas() {
     .then(response => response.text())
     .then(text => {
       const data = text.trim().split("\n").slice(1).map(line => line.split(","));
-
       cargarMarcasSelect(data);
-      //cargarModelosSelect(data,"index");
-      //cargarAniosSelect(data,"index");
     });
 }
 
