@@ -1,4 +1,6 @@
-import Seguro from "./seguro";
+import Seguro from "./seguro.js";
+
+let catalogo  = [];
 
 //import { Precio } from './precio.js';
 const anioDesdeSelect = document.getElementById("anioDesde");
@@ -32,42 +34,65 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function cargarMarcas() {
   var nombrePagina  = document.URL.split('/').pop();
-  var datafile ="";
+  //var datafile ="";
   //console.log(nombrePagina);
-  if(nombrePagina.includes( "index.html")){
-    datafile = "./data.csv";
-  }
-  else if (nombrePagina.includes("agregar.html")){
-    datafile = "../data.csv"
+  //if(nombrePagina.includes( "index.html")){
+//    datafile = "./data.csv";
+//  }
+  //else 
+  if (nombrePagina.includes("agregar.html")){
+    //datafile = "../data.csv"
     
     autoPrecioCheck.addEventListener("change", function() {
     mostrarCamposIncrementos();
   });
   }
 
-  fetch(datafile)
-    .then(response => response.text())
-    .then(text => {
-      const data = text.trim().split("\n").slice(1).map(line => line.split(","));
-      cargarMarcasSelect(data);
-      //console.log(data);
-      pruebaPOST(data);
-    });
+ //  fetch(datafile) ... Se substituye
+  getCatalogo()
+  .then(() => {
+    console.log("Catálogo listo");
+    console.log(catalogo);
+    cargarMarcasSelect();
+  })
+  .catch(error => {
+    console.log("Error al obtener el catálogo:", error);
+  });
+   
+}
+
+
+function getCatalogo() {
+  return new Promise((resolve, reject) => {
+    fetch(urlCatalogo)
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((item) => {
+          catalogo.push(item);
+        });
+        resolve();
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
 }
 
 function pruebaPOST(data){
   data.forEach(element => {
-    console.log(element);
-    //const newItem = new Seguro (element[0],element[1],element[2],  element[3], element[4],element[5]);
-    console.log(newItem);
+    //console.log(element);
+    const newItem = new Seguro (element[0],element[1],parseInt(element[2]),  element[3], element[4],parseInt(element[5]));
+    //console.log(newItem);
     //crearPrecioAsync(newItem);
+    //RUN ONCE to load dumydata
+    crearPrecioSync(newItem);
   });
 }
 
 async function crearPrecioAsync(precio){
   const resp = await fetch(urlCatalogo,{
     method: "POST",
-    body: "",
+    body: JSON.stringify(precio),
     headers: {
       "Content-Type": "application/json",
     },
@@ -76,9 +101,35 @@ async function crearPrecioAsync(precio){
   console.log(data1);
 }
 
-function cargarMarcasSelect(data) {
+function crearPrecioSync(precio) {
+  return new Promise((resolve) => {
+    fetch(urlCatalogo, {
+      method: "POST",
+      body: JSON.stringify(precio),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((resp) => {
+      resolve(resp);
+    });
+  }).then((data) => {
+    // Esperar 3 segundos- Mockapi me rechaza
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(data);
+      }, 5000);
+    });
+  }).then((data) => {
+    console.log("Espera de 4 segundos completada");
+    console.log(data);
+  }).catch((error) => {
+    console.log("Error en la solicitud:", error);
+  });
+}
+
+function cargarMarcasSelect() {
   
-  const marcas = [...new Set(data.map(line => line[0]))];
+  const marcas = [...new Set(catalogo.map(line => line.marca))];
   marcas.forEach(marca => {
     const option = document.createElement("option");
     option.value = marca;
@@ -89,13 +140,13 @@ function cargarMarcasSelect(data) {
     modeloSelect.innerHTML = "<option value=''>-- Seleccione un modelo --</option>"; // Limpiar select
     anioSelect.innerHTML = "<option value=''>-- Seleccione un año --</option>"; // Limpiar select
 
-    cargarModelosSelect(data);    
+    cargarModelosSelect();    
   });    
 }
 
-function cargarModelosSelect(data) {
+function cargarModelosSelect() {
   
-  const modelos = [...new Set(data.filter(line => line[0] === marcaSelect.value).map(line => line[1]))]; // Obtener modelos sin repetir
+  const modelos = [...new Set(catalogo.filter(line => line.marca  === marcaSelect.value).map(line => line.modelo))]; // Obtener modelos sin repetir
             modelos.forEach(modelo => {
               const option = document.createElement("option");
               option.value = modelo;
@@ -105,15 +156,15 @@ function cargarModelosSelect(data) {
   modeloSelect.addEventListener("change", () => {
     
     anioSelect.innerHTML = "<option value=''>-- Seleccione un año --</option>"; // Limpiar select    
-    cargarAniosSelect(data) 
+    cargarAniosSelect() 
   });
 }
 
-function cargarAniosSelect(data) {
+function cargarAniosSelect() {
   
   var nombrePagina  = document.URL.split('/').pop();
 
-  const anios = [...new Set(data.filter(line => line[0] === marcaSelect.value && line[1] === modeloSelect.value).map(line => line[2]))]; // Obtener años sin repetir
+  const anios = [...new Set(catalogo.filter(line => line.marca === marcaSelect.value && line.modelo === modeloSelect.value).map(line => line.anio))]; // Obtener años sin repetir
   anios.forEach(anio => {
     const option = document.createElement("option");
     option.value = anio;
@@ -127,15 +178,15 @@ function cargarAniosSelect(data) {
     //Si es para agregar nuevo
     anioSelect.addEventListener("change", () => {
       aseguradoraSelect.innerHTML = "<option value=''>-- Seleccione una aseguradora --</option>"; // Limpiar select    
-      cargarAseguradoraSelect(data) 
+      cargarAseguradoraSelect() 
     });
   }
 }
 
-function cargarAseguradoraSelect(data) {
+function cargarAseguradoraSelect() {
   
 
-  const aseguradoras = [...new Set(data.filter(line => line[0] === marcaSelect.value && line[1] === modeloSelect.value && line[2] === anioSelect.value).map(line => line[3]))];
+  const aseguradoras = [...new Set(catalogo.filter(line => line.marca === marcaSelect.value && line.modelo === modeloSelect.value && line.anio === parseInt(anioSelect.value)).map(line => line.aseguradora))];
   aseguradoras.forEach(aseguradora => {
     const option = document.createElement("option");
     option.value = aseguradora;
@@ -146,7 +197,7 @@ function cargarAseguradoraSelect(data) {
 
 
 
-function reportPrices(data) {    
+function reportPrices() {    
     
     const marcaValue = marcaSelect.value.trim();
     const modeloValue = modeloSelect.value.trim();
@@ -160,7 +211,7 @@ function reportPrices(data) {
     console.log(`La marca seleccionada es ${marcaValue}`);
     }
 
-    imprimirData(data);
+    imprimirData();
 
     document.getElementById("marca").value = marcaValue ;
     document.getElementById("modelo").value = modeloValue ;
@@ -168,8 +219,8 @@ function reportPrices(data) {
 
 }
 
-function imprimirData(data) {
-    console.log(data);
+function imprimirData() {
+    console.log(catalogo);
   }
 
 function mostrarCamposIncrementos() {
