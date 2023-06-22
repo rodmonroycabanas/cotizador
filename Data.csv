@@ -1,47 +1,50 @@
 marca,modelo,anio,aseguradora,cobertura,precio
-BMW,Serie 3,2016,Zurich,Todo Riesgo,"$9,000"
-BMW,Serie 3,2016,Zurich,Amplio,"$8,000"
-BMW,Serie 3,2016,Zurich,Terceros,"$4,000"
-BMW,Serie 5,2018,Zurich,Todo Riesgo Amplio,"$11,000"
-BMW,Serie 5,2018,Zurich,Todo Riesgo,"$9,000"
-BMW,Serie 5,2018,Zurich,Amplio,"$7,000"
-BMW,Serie 5,2018,Zurich,Terceros,"$3,500"
-Dodge,Charger,2019,Zurich,Terceros,"$5,000"
-Dodge,Charger,2019,Zurich,Amplio,"$9,000"
-Dodge,Charger,2019,Zurich,Todo Riesgo,"$13,000"
-Dodge,Durango,2021,Zurich,Terceros Amplio,"$9,500"
-Dodge,Durango,2021,Zurich,Amplio,"$11,000"
-Dodge,Durango,2021,Zurich,Todo Riesgo,"$13,000"
-Ford,Mustang,2020,Zurich,Todo Riesgo Amplio,"$12,000"
-Ford,Mustang,2020,Zurich,Todo Riesgo,"$10,000"
-Ford,Mustang,2020,Zurich,Amplio,"$9,000"
-Ford,Mustang,2020,Zurich,Terceros,"$4,500"
-Ford,Fiesta,2019,Zurich,Todo Riesgo,"$7,500"
-Ford,Fiesta,2019,Zurich,Amplio,"$6,500"
-Ford,Fiesta,2019,Zurich,Terceros,"$3,000"
-Ford,Ranger,2017,Zurich,Todo Riesgo,"$10,000"
-Ford,Ranger,2017,Zurich,Amplio,"$8,000"
-Ford,Ranger,2017,Zurich,Terceros,"$4,000"
-Mercedez,CLA,2018,Zurich,Terceros Amplio,"$10,000"
-Mercedez,CLA,2018,Zurich,Amplio,"$12,000"
-Mercedez,CLA,2018,Zurich,Todo Riesgo,"$14,000"
-Mercedez,GLC,2017,Zurich,Terceros Amplio,"$8,500"
-Mercedez,GLC,2017,Zurich,Amplio,"$10,000"
-Mercedez,GLC,2017,Zurich,Todo Riesgo,"$12,000"
-Nissan,Sentra,2017,Zurich,Todo Riesgo,"$8,000"
-Nissan,Sentra,2017,Zurich,Amplio,"$11,000"
-Nissan,Sentra,2017,Zurich,Terceros,"$5,000"
-Nissan,Altima,2020,Zurich,Todo Riesgo Amplio,"$13,000"
-Nissan,Altima,2020,Zurich,Todo Riesgo,"$11,000"
-Nissan,Altima,2020,Zurich,Amplio,"$9,000"
-Nissan,Altima,2020,Zurich,Terceros,"$5,000"
-Toyota,Corolla,2022,Zurich,Todo Riesgo Amplio,"$11,000"
-Toyota,Corolla,2022,Zurich,Todo Riesgo,"$9,000"
-Toyota,Corolla,2022,Zurich,Amplio,"$7,000"
-Toyota,Corolla,2022,Zurich,Terceros,"$3,500"
-Toyota,Camry,2015,Zurich,Terceros,"$4,000"
-Toyota,Camry,2015,Zurich,Amplio,"$7,000"
-Toyota,Camry,2015,Zurich,Todo Riesgo,"$10,000"
-Toyota,Yaris,2016,Zurich,Terceros Amplio,"$5,500"
-Toyota,Yaris,2016,Zurich,Amplio,"$6,500"
-Toyota,Yaris,2016,Zurich,Todo Riesgo,"$8,500"
+Mercedez,Clase C,2018,Monterrey,RC Terceros,6500
+Ford,Fiesta,2015,HDI,Amplia,8000
+Chevrolet,Cruze,2019,Zurich,Amplia,15000
+Kia,Sportage,2017,Banorte,Limitada,9000
+Hyundai,Elantra,2016,Mapfre,RC Terceros,5500
+Ford,Focus,2014,Mapfre,RC Terceros,5000
+Mercedez,Clase A,2020,Zurich,Amplia,17000
+Chevrolet,Spark,2013,Monterrey,Limitada,7000
+Hyundai,Sonata,2012,HDI,RC Terceros,6000
+Kia,Rio,2011,Mapfre,Limitada,4500
+Ford,Mustang,2017,Zurich,Amplia,18000
+Mercedez,GLC,2019,Monterrey,Limitada,8500
+Chevrolet,Equinox,2016,Mapfre,Amplia,12000
+Hyundai,Tucson,2015,Banorte,Limitada,9500
+Kia,Ceed,2018,HDI,Amplia,13000
+Ford,Escape,2017,HDI,Amplia,11000
+Mercedez,Clase E,2014,Monterrey,RC Terceros,6000
+Chevrolet,Trax,2013,Mapfre,Limitada,7500
+Hyundai,i10,2012,Zurich,RC Terceros,5500
+Kia,Soul,2011,Monterrey,Amplia,10000
+Ford,Explorer,2020,Mapfre,Amplia,16000
+Mercedez,Clase B,2019,Banorte,Limitada,8500
+Chevrolet,Malibu,2016,Zurich,Amplia,14000
+Hyundai,Accent,2015,Monterrey,Limitada,8000
+Kia,Rio,2014,HDI,RC Terceros,5500
+Ford,Fusion,2013,HDI,Amplia,9000
+Mercedez,Clase C,2012,Monterrey,Limitada,7500
+Chevrolet,Cruze,2011,Mapfre,RC Terceros,5000
+Hyundai,Elantra,2020,Zurich,Limitada,11000
+Kia,Sportage,2019,Banorte,Amplia,14000
+Ford,Focus,2018,HDI,Amplia,12000
+Mercedez,Clase A,2017,Monterrey,RC Terceros,6500
+Chevrolet,Spark,2016,HDI,Limitada,8000
+Hyundai,Sonata,2015,Mapfre,Amplia,13000
+Kia,Rio,2014,Zurich,Amplia,12000
+Ford,Mustang,2012,Banorte,Limitada,9500
+Mercedez,GLC,2011,HDI,RC Terceros,5500
+Chevrolet,Equinox,2020,HDI,Amplia,16000
+Hyundai,Tucson,2019,Monterrey,Limitada,9000
+Kia,Ceed,2018,Mapfre,RC Terceros,5000
+Ford,Escape,2017,Zurich,Limitada,8500
+Mercedez,Clase E,2016,Monterrey,Amplia,14000
+Chevrolet,Trax,2015,Mapfre,Amplia,12000
+Hyundai,i10,2014,Banorte,RC Terceros,6500
+Kia,Soul,2013,HDI,Limitada,8000
+Ford,Explorer,2012,HDI,Amplia,11000
+Mercedez,Clase B,2020,Zurich,Amplia,17000
+Chevrolet,Malibu,2019,Monterrey,RC Terceros,7500
+Hyundai,Accent,2018,Mapfre,Limitada,7000

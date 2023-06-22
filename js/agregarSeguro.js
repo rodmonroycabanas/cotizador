@@ -41,7 +41,7 @@ function cargarSeguro(){
     nuevoSeguro.sendToLocalStorage();
 };
 
-//polimorphysm for those auto calculated
+// for those auto calculated
 function cargarSeguroConDatos(nuevoAnio, nuevoPrecio){
     var nuevoSeguro = new Seguro()
     nuevoSeguro.marca = marca.value;

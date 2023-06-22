@@ -1,3 +1,5 @@
+import Seguro from "./seguro";
+
 //import { Precio } from './precio.js';
 const anioDesdeSelect = document.getElementById("anioDesde");
 const anioHastaSelect = document.getElementById("anioHasta");
@@ -13,6 +15,7 @@ const hiddendiv2 = document.getElementById("hdiv2");
 const hiddendiv3 = document.getElementById("hdiv3");
 const hiddendiv4 = document.getElementById("hdiv4");
 
+const urlCatalogo ="https://64925933428c3d2035d00b1b.mockapi.io/seguros/catalogo";
 
 anioHastaSelect.addEventListener ("change",() =>{
   if (parseInt(anioHastaSelect.value) < parseInt(anioDesdeSelect.value) ) {
@@ -47,7 +50,30 @@ function cargarMarcas() {
     .then(text => {
       const data = text.trim().split("\n").slice(1).map(line => line.split(","));
       cargarMarcasSelect(data);
+      //console.log(data);
+      pruebaPOST(data);
     });
+}
+
+function pruebaPOST(data){
+  data.forEach(element => {
+    console.log(element);
+    //const newItem = new Seguro (element[0],element[1],element[2],  element[3], element[4],element[5]);
+    console.log(newItem);
+    //crearPrecioAsync(newItem);
+  });
+}
+
+async function crearPrecioAsync(precio){
+  const resp = await fetch(urlCatalogo,{
+    method: "POST",
+    body: "",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data1 = await resp.json();
+  console.log(data1);
 }
 
 function cargarMarcasSelect(data) {
