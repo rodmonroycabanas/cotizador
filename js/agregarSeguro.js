@@ -1,8 +1,6 @@
 
-import Seguro from './seguro.js';
 
 
-let seguros = [];
   
 const formulario = document.querySelector("#formulario");
 const marca = document.querySelector('#marca');
@@ -81,3 +79,43 @@ function cargarMultipleSeguro (){
 
 
 };
+
+
+
+async function crearPrecioAsync(precio){
+    const resp = await fetch(urlCatalogo,{
+      method: "POST",
+      body: JSON.stringify(precio),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data1 = await resp.json();
+    console.log(data1);
+  }
+  
+  function crearPrecioSync(precio) {
+    return new Promise((resolve) => {
+      fetch(urlCatalogo, {
+        method: "POST",
+        body: JSON.stringify(precio),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((resp) => {
+        resolve(resp);
+      });
+    }).then((data) => {
+      // Esperar 3 segundos- Mockapi me rechaza
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(data);
+        }, 5000);
+      });
+    }).then((data) => {
+      console.log("Espera de 4 segundos completada");
+      console.log(data);
+    }).catch((error) => {
+      console.log("Error en la solicitud:", error);
+    });
+  }
