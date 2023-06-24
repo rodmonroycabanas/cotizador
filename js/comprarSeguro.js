@@ -7,8 +7,9 @@ let seguros = [];
 
 const botonCotizar = document.getElementById('btn-cotiza');
 
-botonCotizar.addEventListener('click', function() {
+botonCotizar.addEventListener('click', function(e) {
   // Código a ejecutar cuando se haga clic en el botón "Cotizar!"
+  e.preventDefault();
   alert('Botón Cotizar! fue clickeado');
 });
 
