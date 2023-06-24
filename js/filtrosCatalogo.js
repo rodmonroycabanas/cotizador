@@ -11,20 +11,17 @@ const autoPrecioCheck = document.getElementById("auto-precio");
 const marcaSelect = document.getElementById("marca");
 const aseguradoraSelect = document.getElementById("aseguradora");
 
-const hiddendiv1 =new HTMLElement;
-const hiddendiv2 =new HTMLElement;
-const hiddendiv3 =new HTMLElement;
-const hiddendiv4 =new HTMLElement;
+
 
 const urlCatalogo ="https://64925933428c3d2035d00b1b.mockapi.io/seguros/catalogo";
 
 
 
 //LLenar drop box al cargar el DOM
-/* document.addEventListener("DOMContentLoaded", function() {
+ document.addEventListener("DOMContentLoaded", function() {
     cargarMarcas();
   });
-   */
+   
 
 
 function cargarMarcas() {
@@ -146,4 +143,21 @@ anioHastaSelect.addEventListener ("change",() =>{
       alert("El año hasta no puede ser menor que el año desde");
     }
   });
+
+function mostrarCamposIncrementos() {
+    //const hiddenGroup = document.getElementsByClassName("hidden-group");
+  
+    if (autoPrecioCheck.checked) {
+      hiddendiv1.classList.remove("hidden");
+      hiddendiv2.classList.remove("hidden");
+      hiddendiv3.classList.remove("hidden");
+      hiddendiv4.classList.remove("hidden");
+    } else {
+      hiddendiv1.classList.add("hidden");
+      hiddendiv2.classList.add("hidden");
+      hiddendiv3.classList.add("hidden");
+      hiddendiv4.classList.add("hidden");
+      
+    }
+  }
   
