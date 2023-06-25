@@ -42,8 +42,27 @@ function reportPrices() {
   
     //imprimirData();
     mostrarResultados();
+
+    const botonComprar = document.getElementById("btn-comprar"); 
+
+    botonComprar.addEventListener('click', function(e) {
+        e.preventDefault();
+        transaccionCompra();
+      });
 }
 
+
+function transaccionCompra(){
+    const checkboxes = document.querySelectorAll('input[type="radio"]');
+    let compra = [];
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            //const valor = checkbox.value;
+            compra = resultados.filter(res => res.id === checkbox.value)[0];
+            alert('felicidades' + compra)
+        }
+    })
+}
 
 //resultados
 function mostrarResultados(){
@@ -69,10 +88,10 @@ function filtrarResultados(){
 
 
 
-function renderizarPrecio(seguro) {
+function renderizarPrecio(seguro,id) {
 
-    var htmlText =  '<input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="">\n' +
-                    '  <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1">\n' +
+    var htmlText =  '<input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios' + id +  '" value="' + id +'">\n' +
+                    '  <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios' + id +  '" >\n' +
                     '    <!-- Aseguradora Precio-->\n' +
                     '    ' + seguro.aseguradora + ' - ' + seguro.precio +
                     '    <!-- cobertura-->\n' +
@@ -86,10 +105,11 @@ function renderizarResultados(){
     let htmlInner =  '   <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"> \n' +
                     '       <div class="list-group list-group-checkable d-grid gap-2 border-0" id="lista-resultados"> \n' ;
     resultados.forEach(res => {
-        htmlInner = htmlInner + ' ' + renderizarPrecio(res)
+        htmlInner = htmlInner + ' ' + renderizarPrecio(res,res.id)
     });
     htmlInner = htmlInner + '       </div> \n' +
-                    '  </div>\n';
+                            '  </div>\n \n' +
+                            '<button  id="btn-comprar" class="btn btn-warning btn-lg btn-block" type="submit">Comprar</button> ';
     divRes.innerHTML = htmlInner;
 }
 

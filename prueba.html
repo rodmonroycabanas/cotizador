@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- my styles -->
+     <link rel="stylesheet" type="text/css" href="css/styles.css" />  
+     
+     <link rel="stylesheet" type="text/css" href="css/list-groups.css" />  
+     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+     
+    <title>Cotizador de Seguros</title>
+</head>
+<body >
+    <div class="container py-3">
+        <header>
+            <!-- Updated Navbar -->
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+              <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                        <span class="fs-4">Cotizador de seguros</span>
+              </a>
+        
+              <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a id="btn-agregar" type="button" class="btn btn-danger" href="./pages/agregar.html">Agregar nuevo</a>
+                
+              </nav>
+            </div>
+        </header>
+       <form class="needs-validation col-md-12 " novalidate>
+            <div class="row  mb-5">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3  mb-2">
+                    <label for="marca">Marca</label>
+                    <select class="d-block w-100" id="marca" required >
+                        <option value="">-- Seleccione una marca --</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3  mb-2">
+                    <label for="modelo">Modelo</label>
+                    <select class="d-block w-100" id="modelo" required>
+                    <option value="">-- Seleccione un modelo --</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3  mb-2">
+                    <label for="anio">Año</label>
+                    <select class="d-block w-100" id="anio" required>
+                    <option value="">-- Seleccione un año --</option>
+                    </select> 
+                </div>
+            </div>
+            <button  id="btn-cotiza" class="btn btn-warning btn-lg btn-block" type="submit">Cotizar!</button>
+        </form>
+    </div>
+    <div class="container py-3" id="contResultados">
+        <!-- Resultados-->
+        <div class="container py-3" id="contResultados">   <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"> 
+            <div class="list-group list-group-checkable d-grid gap-2 border-0" id="lista-resultados"> 
+      <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="">
+       <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1">
+         <!-- Aseguradora Precio-->
+         Mapfre - 7000    <!-- cobertura-->
+         <span class="d-block small opacity-50">Limitada</span>
+       </label> <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios2" value="">
+       <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios2">
+         <!-- Aseguradora Precio-->
+         Mapfre - 15000    <!-- cobertura-->
+         <span class="d-block small opacity-50">Amplia</span>
+       </label> <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios3" value="">
+       <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios3">
+         <!-- Aseguradora Precio-->
+         Mapfre - 1220    <!-- cobertura-->
+         <span class="d-block small opacity-50">RC Terceros</span>
+       </label> <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios4" value="">
+       <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios4">
+         <!-- Aseguradora Precio-->
+         Monterrey - 8000    <!-- cobertura-->
+         <span class="d-block small opacity-50">Limitada</span>
+       </label> <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios5" value="">
+       <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios5">
+         <!-- Aseguradora Precio-->
+         Monterrey - 17000    <!-- cobertura-->
+         <span class="d-block small opacity-50">Amplia</span>
+       </label> <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios6" value="">
+       <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios6">
+         <!-- Aseguradora Precio-->
+         Monterrey - 3000    <!-- cobertura-->
+         <span class="d-block small opacity-50">RC Terceros</span>
+       </label>       </div> 
+       </div>
+     </div>
+        <!-- Resultados-->
+    </div>
+    <!-- javascript -->
+    
+    <script src="../js/filtrosCatalogo.js" type="module" ></script>
+    <script src="../js/comprarSeguro.js" type="module" ></script>
+    <script src="../js/seguro.js" type="module" ></script>
+    
+
+</body>
+</html>
