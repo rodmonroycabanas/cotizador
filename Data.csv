@@ -1,50 +1,134 @@
-marca,modelo,anio,aseguradora,cobertura,precio
-Mercedez,Clase C,2018,Monterrey,RC Terceros,6500
-Ford,Fiesta,2015,HDI,Amplia,8000
-Chevrolet,Cruze,2019,Zurich,Amplia,15000
-Kia,Sportage,2017,Banorte,Limitada,9000
-Hyundai,Elantra,2016,Mapfre,RC Terceros,5500
-Ford,Focus,2014,Mapfre,RC Terceros,5000
-Mercedez,Clase A,2020,Zurich,Amplia,17000
-Chevrolet,Spark,2013,Monterrey,Limitada,7000
-Hyundai,Sonata,2012,HDI,RC Terceros,6000
-Kia,Rio,2011,Mapfre,Limitada,4500
-Ford,Mustang,2017,Zurich,Amplia,18000
-Mercedez,GLC,2019,Monterrey,Limitada,8500
-Chevrolet,Equinox,2016,Mapfre,Amplia,12000
-Hyundai,Tucson,2015,Banorte,Limitada,9500
-Kia,Ceed,2018,HDI,Amplia,13000
-Ford,Escape,2017,HDI,Amplia,11000
-Mercedez,Clase E,2014,Monterrey,RC Terceros,6000
-Chevrolet,Trax,2013,Mapfre,Limitada,7500
-Hyundai,i10,2012,Zurich,RC Terceros,5500
-Kia,Soul,2011,Monterrey,Amplia,10000
-Ford,Explorer,2020,Mapfre,Amplia,16000
-Mercedez,Clase B,2019,Banorte,Limitada,8500
-Chevrolet,Malibu,2016,Zurich,Amplia,14000
-Hyundai,Accent,2015,Monterrey,Limitada,8000
-Kia,Rio,2014,HDI,RC Terceros,5500
-Ford,Fusion,2013,HDI,Amplia,9000
-Mercedez,Clase C,2012,Monterrey,Limitada,7500
-Chevrolet,Cruze,2011,Mapfre,RC Terceros,5000
-Hyundai,Elantra,2020,Zurich,Limitada,11000
-Kia,Sportage,2019,Banorte,Amplia,14000
-Ford,Focus,2018,HDI,Amplia,12000
-Mercedez,Clase A,2017,Monterrey,RC Terceros,6500
-Chevrolet,Spark,2016,HDI,Limitada,8000
-Hyundai,Sonata,2015,Mapfre,Amplia,13000
-Kia,Rio,2014,Zurich,Amplia,12000
-Ford,Mustang,2012,Banorte,Limitada,9500
-Mercedez,GLC,2011,HDI,RC Terceros,5500
-Chevrolet,Equinox,2020,HDI,Amplia,16000
-Hyundai,Tucson,2019,Monterrey,Limitada,9000
-Kia,Ceed,2018,Mapfre,RC Terceros,5000
-Ford,Escape,2017,Zurich,Limitada,8500
-Mercedez,Clase E,2016,Monterrey,Amplia,14000
-Chevrolet,Trax,2015,Mapfre,Amplia,12000
-Hyundai,i10,2014,Banorte,RC Terceros,6500
-Kia,Soul,2013,HDI,Limitada,8000
-Ford,Explorer,2012,HDI,Amplia,11000
-Mercedez,Clase B,2020,Zurich,Amplia,17000
-Chevrolet,Malibu,2019,Monterrey,RC Terceros,7500
 Hyundai,Accent,2018,Mapfre,Limitada,7000
+Hyundai,Accent,2018,Mapfre,Amplia,15000
+Hyundai,Accent,2018,Mapfre,RC Terceros,1220
+Hyundai,Accent,2018,Monterrey,Limitada,8000
+Hyundai,Accent,2018,Monterrey,Amplia,17000
+Hyundai,Accent,2018,Monterrey,RC Terceros,3000
+Mercedez,Clase A,2017,Monterrey,RC Terceros,6500
+Mercedez,Clase A,2017,Mapfre,Limitada,8500
+Mercedez,Clase A,2017,Mapfre,Amplia,17000
+Mercedez,Clase A,2017,Mapfre,RC Terceros,5000
+Mercedez,Clase A,2017,Zurich,Limitada,8500
+Mercedez,Clase A,2017,Zurich,Amplia,17000
+Mercedez,Clase A,2017,Zurich,RC Terceros,6000
+Mercedez,Clase B,2019,Banorte,Limitada,8500
+Mercedez,Clase B,2019,Banorte,Amplia,17000
+Mercedez,Clase B,2019,Banorte,RC Terceros,6500
+Mercedez,Clase B,2019,Zurich,Limitada,8500
+Mercedez,Clase B,2019,Zurich,Amplia,17000
+Mercedez,Clase B,2019,Zurich,RC Terceros,6000
+Mercedez,Clase C,2018,Monterrey,RC Terceros,6500
+Mercedez,Clase C,2018,Monterrey,Limitada,7500
+Mercedez,Clase C,2018,Monterrey,Amplia,14000
+Mercedez,Clase C,2018,Monterrey,RC Terceros,5000
+Mercedez,Clase C,2018,Monterrey,Limitada,7500
+Mercedez,Clase C,2018,Monterrey,Amplia,14000
+Mercedez,Clase C,2018,Monterrey,RC Terceros,5000
+Mercedez,Clase C,2018,Monterrey,Limitada,7500
+Mercedez,Clase C,2018,Monterrey,Amplia,14000
+Mercedez,Clase C,2018,Monterrey,RC Terceros,5000
+Mercedez,Clase E,2014,Monterrey,RC Terceros,6000
+Mercedez,Clase E,2014,Monterrey,Limitada,7500
+Mercedez,Clase E,2014,Monterrey,Amplia,14000
+Mercedez,Clase E,2014,Monterrey,RC Terceros,5000
+Mercedez,Clase E,2014,Monterrey,Limitada,7500
+Mercedez,Clase E,2014,Monterrey,Amplia,14000
+Mercedez,Clase E,2014,Monterrey,RC Terceros,5000
+Chevrolet,Cruze,2011,Mapfre,RC Terceros,5000
+Chevrolet,Cruze,2011,Mapfre,Limitada,9500
+Chevrolet,Cruze,2011,Mapfre,Amplia,15000
+Chevrolet,Cruze,2011,Mapfre,RC Terceros,5000
+Chevrolet,Cruze,2011,Zurich,Limitada,9500
+Chevrolet,Cruze,2011,Zurich,Amplia,15000
+Chevrolet,Cruze,2011,Zurich,RC Terceros,5000
+Chevrolet,Cruze,2011,HDI,Limitada,9500
+Chevrolet,Cruze,2011,HDI,Amplia,15000
+Chevrolet,Cruze,2011,HDI,RC Terceros,5000
+Hyundai,Elantra,2016,Mapfre,RC Terceros,5500
+Hyundai,Elantra,2016,Mapfre,Limitada,11000
+Hyundai,Elantra,2016,Mapfre,Amplia,16500
+Hyundai,Elantra,2016,Mapfre,RC Terceros,5500
+Hyundai,Elantra,2016,Zurich,Limitada,11000
+Hyundai,Elantra,2016,Zurich,Amplia,16500
+Hyundai,Elantra,2016,Zurich,RC Terceros,5500
+Hyundai,Elantra,2016,Banorte,Limitada,11000
+Hyundai,Elantra,2016,Banorte,Amplia,16500
+Hyundai,Elantra,2016,Banorte,RC Terceros,5500
+Chevrolet,Equinox,2020,HDI,Amplia,16000
+Chevrolet,Equinox,2020,HDI,Limitada,11000
+Chevrolet,Equinox,2020,HDI,RC Terceros,5500
+Chevrolet,Equinox,2020,Mapfre,Amplia,16000
+Chevrolet,Equinox,2020,Mapfre,Limitada,11000
+Chevrolet,Equinox,2020,Mapfre,RC Terceros,5500
+Chevrolet,Equinox,2020,Zurich,Amplia,16000
+Chevrolet,Equinox,2020,Zurich,Limitada,11000
+Chevrolet,Equinox,2020,Zurich,RC Terceros,5500
+Ford,Escape,2017,HDI,Amplia,11000
+Ford,Escape,2017,HDI,Limitada,8500
+Ford,Escape,2017,HDI,RC Terceros,5500
+Ford,Escape,2017,Zurich,Amplia,11000
+Ford,Escape,2017,Zurich,Limitada,8500
+Ford,Escape,2017,Zurich,RC Terceros,5500
+Ford,Escape,2017,HDI,Amplia,11000
+Ford,Escape,2017,HDI,Limitada,8500
+Ford,Escape,2017,HDI,RC Terceros,5500
+Ford,Explorer,2012,HDI,Amplia,11000
+Ford,Explorer,2012,HDI,Limitada,9000
+Ford,Explorer,2012,HDI,RC Terceros,5500
+Ford,Explorer,2012,Mapfre,Amplia,11000
+Ford,Explorer,2012,Mapfre,Limitada,9000
+Ford,Explorer,2012,Mapfre,RC Terceros,5500
+Ford,Explorer,2012,Monterrey,Amplia,11000
+Ford,Explorer,2012,Monterrey,Limitada,9000
+Ford,Explorer,2012,Monterrey,RC Terceros,5500
+Ford,Fiesta,2015,HDI,Amplia,8000
+Ford,Fiesta,2015,HDI,Limitada,6500
+Ford,Fiesta,2015,HDI,RC Terceros,5000
+Ford,Fiesta,2015,HDI,Amplia,8000
+Ford,Fiesta,2015,HDI,Limitada,6500
+Ford,Fiesta,2015,HDI,RC Terceros,5000
+Ford,Focus,2018,HDI,Amplia,12000
+Ford,Focus,2018,HDI,Limitada,8500
+Ford,Focus,2018,HDI,RC Terceros,6000
+Ford,Focus,2018,HDI,Amplia,12000
+Ford,Focus,2018,HDI,Limitada,8500
+Ford,Focus,2018,HDI,RC Terceros,6000
+Ford,Focus,2018,Mapfre,Amplia,12000
+Ford,Focus,2018,Mapfre,Limitada,8500
+Ford,Focus,2018,Mapfre,RC Terceros,6000
+Ford,Fusion,2013,HDI,Amplia,9000
+Ford,Fusion,2013,HDI,Limitada,7500
+Ford,Fusion,2013,HDI,RC Terceros,5500
+Ford,Fusion,2013,HDI,Amplia,9000
+Ford,Fusion,2013,HDI,Limitada,7500
+Ford,Fusion,2013,HDI,RC Terceros,5500
+Mercedez,GLC,2011,HDI,RC Terceros,5500
+Mercedez,GLC,2011,HDI,Limitada,8500
+Mercedez,GLC,2011,HDI,Amplia,13000
+Mercedez,GLC,2011,HDI,RC Terceros,5500
+Mercedez,GLC,2011,HDI,Limitada,8500
+Mercedez,GLC,2011,HDI,Amplia,13000
+Mercedez,GLC,2011,Monterrey,RC Terceros,7500
+Mercedez,GLC,2011,Monterrey,Limitada,9000
+Mercedez,GLC,2011,Monterrey,Amplia,14000
+Mercedez,GLC,2011,Monterrey,RC Terceros,7500
+Mercedez,GLC,2011,Monterrey,Limitada,9000
+Mercedez,GLC,2011,Monterrey,Amplia,14000
+Hyundai,i10,2014,Banorte,RC Terceros,6500
+Hyundai,i10,2014,Banorte,Limitada,8500
+Hyundai,i10,2014,Banorte,Amplia,13000
+Hyundai,i10,2014,Mapfre,RC Terceros,6500
+Hyundai,i10,2014,Mapfre,Limitada,8500
+Hyundai,i10,2014,Mapfre,Amplia,13000
+Hyundai,i10,2014,Zurich,RC Terceros,6500
+Hyundai,i10,2014,Zurich,Limitada,8500
+Hyundai,i10,2014,Zurich,Amplia,13000
+Hyundai,i20,2017,Banorte,RC Terceros,6500
+Hyundai,i20,2017,Banorte,Limitada,9000
+Hyundai,i20,2017,Banorte,Amplia,15000
+Hyundai,i20,2017,Mapfre,RC Terceros,6500
+Hyundai,i20,2017,Mapfre,Limitada,9000
+Hyundai,i20,2017,Mapfre,Amplia,15000
+Hyundai,i20,2017,Zurich,RC Terceros,6500
+Hyundai,i20,2017,Zurich,Limitada,9000
+Hyundai,i20,2017,Zurich,Amplia,15000

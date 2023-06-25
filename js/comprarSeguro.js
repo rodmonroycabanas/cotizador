@@ -1,44 +1,74 @@
 import Seguro from './seguro.js';
-
-
-let seguros = [];
-
+import Catalogo from "./filtrosCatalogo.js";
 //Buscar
 
 const botonCotizar = document.getElementById('btn-cotiza');
+const anioSelect = document.getElementById("anio");
+const marcaSelect = document.getElementById("marca");
+const modeloSelect = document.getElementById("modelo");
+
+
+let marcaValue = marcaSelect.value.trim();
+let modeloValue = modeloSelect.value.trim();
+let anioValue = anioSelect.value.trim();
+
+
+let resultados = [];
+
 
 botonCotizar.addEventListener('click', function(e) {
   // Código a ejecutar cuando se haga clic en el botón "Cotizar!"
   e.preventDefault();
-  alert('Botón Cotizar! fue clickeado');
+  //alert('Botón Cotizar! fue clickeado');
+  reportPrices();
+  
 });
 
 function reportPrices() {    
-    const marcaValue = marcaSelect.value.trim();
-    const modeloValue = modeloSelect.value.trim();
-    const anioValue = anioSelect.value.trim();
+     marcaValue = marcaSelect.value.trim();
+     modeloValue = modeloSelect.value.trim();
+     anioValue = anioSelect.value.trim();
 
-    if (marcaValue === "" || marcaValue === "-- Seleccione una marca --") {
+    if ( marcaValue === "" || modeloValue === "" || anioValue === "" ) {
     // Si el valor es vacío o "default", se ejecuta este bloque de código
-    console.log("Por favor seleccione una marca");
-    } else {
+    alert("Por favor seleccione una marca");
+    } 
+    //else {
     // Si el valor no es vacío ni "default", se ejecuta este bloque de código
-    console.log(`La marca seleccionada es ${marcaValue}`);
-    }
-
-    imprimirData();
-
-    document.getElementById("marca").value = marcaValue ;
-    document.getElementById("modelo").value = modeloValue ;
-    document.getElementById("anio").value = anioValue ;
-
+    //alert('La marca seleccionada es ' + marcaValue + ' ' + modeloValue + ' ' + anioValue);
+    //}
+    //console.log('imprimir catalogo');
+    //console.log(Catalogo);
+  
+    //imprimirData();
+    mostrarResultados();
 }
 
-function imprimirData() {
-    console.log(catalogo);
-  }
 
 //resultados
+function mostrarResultados(){
+    filtrarResultados();
+    renderizarResultados();
+}
+
+function filtrarResultados(){
+    resultados = [];
+    resultados = Catalogo.filter(line => line.marca === marcaValue && line.modelo === modeloValue && line.anio === parseInt(anioValue))
+    console.log(resultados);
+    
+    resultados.forEach(res => {
+        console.log(  'año:' + res.anio +
+            ' aseguradora: ' + res.aseguradora +
+            ' cobertura: ' + res.cobertura +
+            ' marca: ' + res.marca +
+            ' modelo: ' + res.modelo +
+            ' precio: ' + res.precio);
+    });
+    
+}
+
+
+
 function renderizarPrecio(seguro) {
 
     var htmlText =  '<input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="">\n' +
@@ -52,23 +82,14 @@ function renderizarPrecio(seguro) {
   }
 
 function renderizarResultados(){
-    let div = document.getElementById('contResultados');
-    let htmInner =  '   <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"> \n' +
+    let divRes = document.getElementById('contResultados');
+    let htmlInner =  '   <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"> \n' +
                     '       <div class="list-group list-group-checkable d-grid gap-2 border-0" id="lista-resultados"> \n' ;
-    array.forEach(element => {
-        
+    resultados.forEach(res => {
+        htmlInner = htmlInner + ' ' + renderizarPrecio(res)
     });
-                    '       </div> \n' +
+    htmlInner = htmlInner + '       </div> \n' +
                     '  </div>\n';
+    divRes.innerHTML = htmlInner;
 }
 
-function pruebaPOST(data){
-    data.forEach(element => {
-      //console.log(element);
-      const newItem = new Seguro (element[0],element[1],parseInt(element[2]),  element[3], element[4],parseInt(element[5]));
-      //console.log(newItem);
-      //crearPrecioAsync(newItem);
-      //RUN ONCE to load dumydata
-      crearPrecioSync(newItem);
-    });
-  }

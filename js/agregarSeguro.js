@@ -1,6 +1,9 @@
 
 
+import Seguro from './seguro.js';
 
+
+const urlCatalogo ="https://64925933428c3d2035d00b1b.mockapi.io/seguros/catalogo";
   
 const formulario = document.querySelector("#formulario");
 const marca = document.querySelector('#marca');
@@ -15,6 +18,9 @@ const anFin = document.querySelector('#anFin');
 const anioDesde = document.querySelector('#anioDesde');
 const anioHasta = document.querySelector('#anioHasta');
 const xcent = document.querySelector('#xcent');
+
+
+let datos = [];
 
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -80,19 +86,55 @@ function cargarMultipleSeguro (){
 
 };
 
+//document.addEventListener("DOMContentLoaded", async function() {
+//  try {
+//      datos = await leerCSV();
+//      
+//      if (datos.length > 0) {
+//          console.log(datos.length);
+//          console.log('Inicio POST');
+//        //pruebaPOST();
+//      }
+//    } catch (error) {
+//      console.error( error);
+//    }
+//  });
+   
 
 
-async function crearPrecioAsync(precio){
-    const resp = await fetch(urlCatalogo,{
-      method: "POST",
-      body: JSON.stringify(precio),
-      headers: {
-        "Content-Type": "application/json",
-      },
+// Función para leer el archivo CSV
+async function  leerCSV () {
+  try {
+    const respuesta = await fetch("../Data.csv");
+    const texto = await respuesta.text();
+    const filas = texto.split('\n');
+    const datosTemp = [];
+    
+    filas.forEach((fila) => {
+      const columnas = fila.split(',');
+      datosTemp.push(columnas);
     });
-    const data1 = await resp.json();
-    console.log(data1);
+    
+    console.log(datosTemp);
+    return datosTemp;
+  } catch (error) {
+    console.error('Error al leer el archivo CSV:', error);
   }
+};
+
+//Prueba para cargar datos a mockapi
+function pruebaPOST(){
+    datos.forEach(element => {
+      //console.log(element);
+      const newItem = new Seguro (element[0],element[1],parseInt(element[2]),  element[3], element[4],parseInt(element[5]));
+      //console.log(newItem);
+      //crearPrecioAsync(newItem);
+      //RUN ONCE to load dumydata
+      crearPrecioSync(newItem);
+    });
+  }
+
+
   
   function crearPrecioSync(precio) {
     return new Promise((resolve) => {
@@ -105,16 +147,16 @@ async function crearPrecioAsync(precio){
       }).then((resp) => {
         resolve(resp);
       });
-    }).then((data) => {
-      // Esperar 3 segundos- Mockapi me rechaza
+    }).then((datos) => {
+      // Esperar 5 segundos- Mockapi me rechaza
       return new Promise((resolve) => {
         setTimeout(() => {
-          resolve(data);
+          resolve(datos);
         }, 5000);
       });
-    }).then((data) => {
-      console.log("Espera de 4 segundos completada");
-      console.log(data);
+    }).then((datos) => {
+      console.log("Espera de 5 segundos completada");
+      console.log(datos);
     }).catch((error) => {
       console.log("Error en la solicitud:", error);
     });

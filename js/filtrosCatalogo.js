@@ -138,11 +138,15 @@ function cargarAseguradoraSelect() {
   }
 
 // Validaciones
-anioHastaSelect.addEventListener ("change",() =>{
-    if (parseInt(anioHastaSelect.value) < parseInt(anioDesdeSelect.value) ) {
-      alert("El año hasta no puede ser menor que el año desde");
-    }
-  });
+
+
+if (anioHastaSelect) {
+    anioHastaSelect.addEventListener("change", () => {
+      if (parseInt(anioHastaSelect.value) < parseInt(anioDesdeSelect.value)) {
+        alert("El año hasta no puede ser menor que el año desde");
+      }
+    });
+}
 
 function mostrarCamposIncrementos() {
     //const hiddenGroup = document.getElementsByClassName("hidden-group");
@@ -161,3 +165,5 @@ function mostrarCamposIncrementos() {
     }
   }
   
+
+  export default catalogo;
