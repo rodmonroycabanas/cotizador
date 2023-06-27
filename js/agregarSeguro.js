@@ -21,6 +21,7 @@ const xcent = document.querySelector('#xcent');
 
 
 let datos = [];
+let seguros = [];
 
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -40,9 +41,37 @@ function cargarSeguro(){
     nuevoSeguro.aseguradora = aseguradora.value;
     nuevoSeguro.cobertura = cobertura.value;
     nuevoSeguro.precio = precio.value;
+    //alert
+    Swal.fire({
+        title: 'Seguro que quieres agregar este producto?',
+        text: 'Marca: ' + nuevoSeguro.marca + '\nModelo: ' + nuevoSeguro.modelo + '\nAño: ' + nuevoSeguro.anio + '\nPrecio: ' + nuevoSeguro.precio,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Agregar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            seguros.push(nuevoSeguro);
+            nuevoSeguro.sendToLocalStorage();
+            crearPrecioSync(nuevoSeguro)
+            Swal.fire(
+            'Precio agregado!',
+            'Se ha guardado un nuevo precio',
+            'success'
+          )
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              'Cancelado',
+              'No hemos guardad el registro',
+              'error'
+            )
+          }
+      })
     
-    seguros.push(nuevoSeguro);
-    nuevoSeguro.sendToLocalStorage();
 };
 
 // for those auto calculated

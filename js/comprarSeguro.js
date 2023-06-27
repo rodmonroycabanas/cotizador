@@ -59,7 +59,14 @@ function transaccionCompra(){
         if (checkbox.checked) {
             //const valor = checkbox.value;
             compra = resultados.filter(res => res.id === checkbox.value)[0];
-            alert('felicidades' + compra)
+            //alert('felicidades' + compra)
+            Swal.fire({
+                //position: 'top-end',
+                icon: 'success',
+                title: 'Gracias por tu compra',
+                showConfirmButton: false,
+                timer: 1500
+              })
         }
     })
 }
